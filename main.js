@@ -57,7 +57,14 @@ const calcularImc = (curp,peso,altura) =>{
              return
         }
 
-        const fecha = new Date()
+        const fecha = new Date();
+        if (fecha instanceof Date && !isNaN(fecha)) {
+          // Ahora puedes usar fecha.toLocaleDateString() sin errores
+          const fechaFormateada = fecha.toLocaleDateString();
+        } else {
+          console.error("La fecha no es válida");
+        }
+
         const imcCalculado = peso / (altura * altura) 
         let anotaciones = ""
         if (imcCalculado < 18.5) {
@@ -93,6 +100,7 @@ const crearConsulta = () =>{
         e.preventDefault()
         const datos = e.target.children
         calcularImc(datos["curp"].value,datos["peso"].value,datos["altura"].value)
+        formCalcularIMC.reset()
     })
 }
 
@@ -113,6 +121,8 @@ const verPacientes = () => {
     
         const btnVerConsultas = document.getElementById(`verConsultas${paciente.curp}`);
         const divConsultas = document.getElementById(`consultas${paciente.curp}`);
+
+       
     
         btnVerConsultas.addEventListener("click", () => {
             mostrarConsultas(paciente, divConsultas);
@@ -134,8 +144,9 @@ const mostrarConsultas = (paciente, divConsultas) => {
         paciente.consultas.forEach(consulta => {
             const consultaHTML = document.createElement("div");
             consultaHTML.className = "consulta";
+            const fechaFormateada = new Date(consulta.fecha).toLocaleDateString(); // Formatear la fecha
             consultaHTML.innerHTML = `
-                <p>Fecha: ${consulta.fecha.toLocaleDateString()}</p>
+                <p>Fecha: ${fechaFormateada}</p>
                 <p>Peso: ${consulta.peso} kg</p>
                 <p>Altura: ${consulta.altura} m</p>
                 <p>IMC: ${consulta.imcCalculado.toFixed(2)}</p>
