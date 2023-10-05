@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="tittle">
+        <h3>Bienvenido a la calculadora de IMC</h3>
+    </div>
+
+    <form id="formCrearPaciente">
+        <input type="text" name="curp" placeholder="Ingrese su CURP" required>
+        <input type="text" name="nombre" placeholder="Ingrese su nombre" required>
+        <input type="text" name="apellido" placeholder="Ingrese su apellido" required>
+        <input type="text" name="direccion" placeholder="Ingrese su dirección" required>
+        <input type="number" name="tel" placeholder="Ingrese su teléfono" required>
+        <button type="submit">Cargar datos paciente</button>
+    </form>
+
+    <form id="formCalcularIMC">
+        <input type="text" id="curpIMC" placeholder="Ingrese CURP del paciente" required>
+        <input type="text" id="peso" placeholder="Ingrese peso del paciente" required>
+        <input type="text" id="altura" placeholder="Ingrese altura del paciente" required>
+        <button type="submit">Calcular IMC</button>
+    </form>
+
+    <div class="tittle">
+        <h3>Lista de pacientes</h3>
+    </div>
+
+    <div id="contenedorPacientes">
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
