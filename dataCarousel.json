@@ -1,0 +1,17 @@
+[
+    {
+        "titulo": "Ejercicio al aire libre",
+        "descripcion": "Puedes hacer ejercicio en un parque.",
+        "imagen": "./img/carousel/salud1.jpg"
+    },
+    {
+        "titulo": "Ejercicio en casa",
+        "descripcion": "Puedes hacer ejercicio sin salir de casa.",
+        "imagen": "./img/carousel/salud2.jpg"
+    },
+    {
+        "titulo": "Comida saludable",
+        "descripcion": "Una comida saludable ayudará a mejorar tu salud.",
+        "imagen": "./img/carousel/salud3.jpg"
+    }
+]
